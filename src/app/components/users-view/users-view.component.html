@@ -7,11 +7,17 @@
       alt="{{ user.login }}"
     />
     <div class="users-view__details">
-        <h3 >{{ user.login }}</h3>
-        <a class="users-view__title" [href]="user.html_url" target="_blank">Visit</a>
+      <h3>{{ user.login }}</h3>
+      <a class="users-view__title" [href]="user.html_url" target="_blank"
+        >Visit Profile</a
+      >
     </div>
-   
   </div>
 </div>
+} 
 
+@if (!users) {
+<div class="users-view__contain">
+  <app-loader></app-loader>
+</div>
 }

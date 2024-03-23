@@ -6,13 +6,13 @@ import { GithubUser } from '../../model/github-users-model';
 @Component({
   selector: 'app-users-view',
   templateUrl: './users-view.component.html',
-  styleUrl: './users-view.component.scss'
+  styleUrl: './users-view.component.scss',
 })
 export class UsersViewComponent {
   users: Observable<GithubUser[]> | undefined;
-  constructor(private githubService:GithubService){}
+  constructor(private githubService: GithubService) {}
 
-  ngOnInit(){
+  ngOnInit() {
     this.users = this.githubService.users$;
   }
 }

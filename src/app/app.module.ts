@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './components/search/search.component';
 import { GithubService } from './services/github.service';
 import { UsersViewComponent } from './components/users-view/users-view.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-    UsersViewComponent
+    UsersViewComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
