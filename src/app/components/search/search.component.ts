@@ -39,7 +39,7 @@ export class SearchComponent implements OnDestroy {
         if (term.length > 0 && term.trim() !== '') {
           this.githubService.searchUsers(term);
         } 
-        else this.loadDefaultUsers();
+        // else this.loadDefaultUsers();
       });
   }
 
