@@ -1,36 +1,73 @@
-/* users-view.component.scss */
-
-/* Define block-level styles */
 .users-view {
-    &__container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
+    &__contain {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top:165px;
     }
-  
+
     &__card {
-      width: 250px;
-      margin: 10px;
-      padding: 20px;
-      border-radius: 5px;
-      background-color: #fff;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease-in-out;
-  
-      &:hover {
-        box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
-      }
+        width: 250px;
+        margin: 10px;
+        padding: 20px;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            box-shadow:0px 0px 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
     }
-  
+
     &__image {
-      width: 100%;
-      height: auto;
-      border-radius: 50%;
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+        animation: pop-in 1.5s ease-in-out forwards;
     }
-  
-    &__title {
-      margin-top: 10px;
-      text-align: center;
+
+
+
+    &__details {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap:10px;
+        animation: pop-in 1.3s ease-in-out forwards;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        a {
+            text-decoration: none;
+            color: white;
+            width: max-content;
+            height: max-content;
+            padding: 10px;
+            border-radius: 7px;
+            background: rgb(13, 112, 142);
+            font-size: 12px;
+            animation: pop-in 1.3s ease-in-out forwards;
+            font-weight: 600;
+        }
     }
-  }
-  
+
+
+}
+
+@keyframes pop-in {
+    0% {
+        transform: scale(0.5);
+        /* Start small */
+        opacity: 0;
+        /* Start invisible */
+    }
+
+    100% {
+        transform: scale(1);
+        /* End at normal size */
+        opacity: 1;
+        /* End fully visible */
+    }
+}

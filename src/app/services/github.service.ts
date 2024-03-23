@@ -22,7 +22,7 @@ export class GithubService {
 
   loadDefaultUsers(): void {
     // Fetch trending repositories from GitHub
-    this.http.get<any[]>('https://api.github.com/search/repositories?q=created:>2022-01-01&sort=stars&order=desc')
+    this.http.get<any[]>('https://api.github.com/search/repositories?q=created:>2022-01-01&sort=stars&order=desc&per_page=50')
       .pipe(
         map( (data:any) => data.items.map((item: { owner: any; }) => item.owner)) // Extract users from repositories
       )

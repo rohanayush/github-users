@@ -1,12 +1,16 @@
 @if (users) {
-<div class="users-view__container">
+<div class="users-view__contain">
   <div class="users-view__card" *ngFor="let user of users | async">
     <img
       class="users-view__image"
       [src]="user.avatar_url"
       alt="{{ user.login }}"
     />
-    <h3 class="users-view__title">{{ user.login }}</h3>
+    <div class="users-view__details">
+        <h3 >{{ user.login }}</h3>
+        <a class="users-view__title" [href]="user.html_url" target="_blank">Visit</a>
+    </div>
+   
   </div>
 </div>
 
