@@ -1,5 +1,17 @@
 <div class="header">
-  Github Users 👤
+  Github Users 
 </div>
 <app-search></app-search>
+@if((searchedTerm|async)!="" && !(error|async) &&  (countResults|async) ){
+  <div class="topic"> <h3>Results for {{ searchedTerm | async }}</h3></div>
+}
+
+@if((error|async) ){
+  <div class="topic error"> <h3>Oops ! Something bad happened.</h3></div>
+}
+@if((searchedTerm|async) && !(countResults|async)  ){
+  <div class="topic noresults"> <h3>Seems there are no results for {{ searchedTerm | async }}</h3></div>
+}
+
+
 <app-users-view></app-users-view>

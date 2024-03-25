@@ -1,5 +1,6 @@
 @if (users) {
-<div class="users-view__contain">
+<div class="users-view__contain" [ngStyle]="{ 'margin-top.px': (searchedTerm | async) !== '' ? 10 : 165 }">
+
   <div class="users-view__card" *ngFor="let user of users | async">
     <img
       class="users-view__image"
@@ -14,9 +15,7 @@
     </div>
   </div>
 </div>
-} 
-
-@if (!users) {
+} @if (!users) {
 <div class="users-view__contain">
   <app-loader></app-loader>
 </div>

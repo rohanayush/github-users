@@ -10,9 +10,13 @@ import { GithubUser } from '../../model/github-users-model';
 })
 export class UsersViewComponent {
   users: Observable<GithubUser[]> | undefined;
+  searchedTerm: Observable<string> | undefined;
+  countResults: Observable<number> | undefined;
   constructor(private githubService: GithubService) {}
 
   ngOnInit() {
     this.users = this.githubService.users$;
+    this.searchedTerm = this.githubService.searchTerm$;
+    this.countResults = this.githubService.countResult$;
   }
 }
