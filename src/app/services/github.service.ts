@@ -21,7 +21,7 @@ export class GithubService {
   constructor(private http: HttpClient) {}
 
   searchUsers(query: string): void {
-    console.log('called service', query);
+    //console.log('called service', query);
     this.searchedTermSubject.next(query);
     const url = this.url + `${query}&per_page=50`;
     this.http
@@ -38,7 +38,7 @@ export class GithubService {
           console.error('Error searching users:', error);
         },
         complete: () => {
-          console.log('Search completed');
+          //console.log('Search completed');
         }
       });
   }
@@ -66,7 +66,7 @@ export class GithubService {
           this.errorSubject.next(error.message);
         },
         complete: () => {
-          console.log('Fetching users completed');
+          //console.log('Fetching users completed');
         }
       });
   }
